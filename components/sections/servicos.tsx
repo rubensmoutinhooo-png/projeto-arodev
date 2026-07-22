@@ -339,7 +339,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
 
 export function Servicos() {
   return (
-    <section id="servicos" className="relative py-20 md:py-28">
+    <section id="servicos" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 right-0 size-96 rounded-full bg-aro-accent/10 blur-[110px]"

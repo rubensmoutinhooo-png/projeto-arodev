@@ -37,7 +37,7 @@ const PERGUNTAS = [
 
 export function Faq() {
   return (
-    <section id="faq" className="relative py-20 md:py-28">
+    <section id="faq" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 right-1/3 size-96 rounded-full bg-aro-accent/10 blur-[110px]"

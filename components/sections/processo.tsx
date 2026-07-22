@@ -1,5 +1,6 @@
 import { Code2, Handshake, PenTool, Rocket } from "lucide-react";
 import { FadeIn } from "@/components/fade-in";
+import { ProcessoVideo } from "@/components/processo-video";
 
 const ETAPAS = [
   {
@@ -32,7 +33,7 @@ const ETAPAS = [
 
 export function Processo() {
   return (
-    <section id="processo" className="relative py-20 md:py-28">
+    <section id="processo" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 left-1/3 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
@@ -52,17 +53,7 @@ export function Processo() {
         </FadeIn>
 
         <FadeIn delay={80}>
-          <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-black/40">
-            <video
-              className="aspect-video w-full object-cover"
-              src="/videos/jornada-arodev.mp4"
-              autoPlay
-              loop
-              muted
-              playsInline
-              preload="metadata"
-            />
-          </div>
+          <ProcessoVideo />
         </FadeIn>
 
         <div className="mt-14 md:hidden">

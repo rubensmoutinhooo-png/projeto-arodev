@@ -27,7 +27,7 @@ const COMPROMISSOS = [
 
 export function Garantia() {
   return (
-    <section className="relative py-20 md:py-28">
+    <section className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -bottom-32 right-1/4 size-96 rounded-full bg-aro-accent/10 blur-[110px]"

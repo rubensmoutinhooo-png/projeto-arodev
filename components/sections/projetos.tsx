@@ -79,7 +79,7 @@ function SegmentoIllustration({ item }: { item: (typeof SEGMENTOS)[number] }) {
 
 export function Projetos() {
   return (
-    <section id="projetos" className="relative py-20 md:py-28">
+    <section id="projetos" className="relative overflow-hidden py-20 md:py-28">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -top-24 -left-24 size-80 rounded-full bg-aro-accent/15 blur-3xl"

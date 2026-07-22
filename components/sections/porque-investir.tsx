@@ -50,7 +50,7 @@ const PILARES: Pilar[] = [
 
 export function PorQueInvestir() {
   return (
-    <section className="relative py-20 text-white md:py-28">
+    <section className="relative overflow-hidden py-20 text-white md:py-28">
       {/* auroras agora derivam lentamente (mesmas do hero) */}
       <div
         aria-hidden="true"

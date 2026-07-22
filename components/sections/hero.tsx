@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative pt-32 pb-20 text-white md:pt-40 md:pb-28"
+      className="relative overflow-hidden pt-32 pb-20 text-white md:pt-40 md:pb-28"
     >
       {/* 1a — aurora animada */}
       <div
