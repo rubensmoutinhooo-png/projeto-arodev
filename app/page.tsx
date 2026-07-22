@@ -2,6 +2,7 @@ import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
 import { Servicos } from "@/components/sections/servicos";
 import { PorQueInvestir } from "@/components/sections/porque-investir";
+import { Projetos } from "@/components/sections/projetos";
 import { Processo } from "@/components/sections/processo";
 import { Garantia } from "@/components/sections/garantia";
 import { Faq } from "@/components/sections/faq";
@@ -14,9 +15,10 @@ export default function Home() {
       <Header />
       <main className="flex-1 bg-background">
         <Hero />
-        <PorQueInvestir />
-        <Servicos />
         <Processo />
+        <Servicos />
+        <Projetos />
+        <PorQueInvestir />
         <Garantia />
         <Faq />
         <CtaFinal />

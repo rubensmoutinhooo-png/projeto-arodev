@@ -91,7 +91,7 @@ const SERVICOS = [
     prazo: "20 a 30 dias úteis",
     pergunta: "O que é?",
     descricao:
-      "Sua loja aberta e vendendo 24 horas por dia. O cliente navega, escolhe o produto e paga ali mesmo, enquanto você gerencia tudo por um painel simples — sem precisar de técnico.",
+      "Sua loja aberta e vendendo 24 horas por dia. O cliente navega, escolhe o produto e paga ali mesmo, enquanto você gerencia tudo por um painel simples, sem precisar de técnico.",
     explicacao:
       "Uma plataforma completa com catálogo, carrinho e pagamentos integrados (Pix e Cartão). Você controla o estoque e os pedidos de forma intuitiva e automática.",
     precoPrefixo: "a partir de",
@@ -183,7 +183,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-[#6366f1] via-transparent to-[#a855f7] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
         />
 
         <div className="relative">
@@ -216,7 +216,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
             )}
           >
             <servico.icon
-              className="size-5 text-aro-accent transition-colors duration-300 group-hover:text-[#c4b5fd]"
+              className="size-5 text-aro-accent transition-colors duration-300 group-hover:text-white"
               strokeWidth={1.75}
             />
           </span>
@@ -346,7 +346,7 @@ export function Servicos() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 -left-24 size-96 rounded-full bg-[#6366f1]/15 blur-[110px]"
+        className="pointer-events-none absolute bottom-0 -left-24 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
       />
 
       <div className="relative mx-auto max-w-6xl px-6">

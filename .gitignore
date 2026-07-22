@@ -43,3 +43,7 @@ next-env.d.ts
 
 .vercel
 .env*
+
+# ferramentas locais / material de referência (não faz parte do site)
+/.claude
+/atualização pasta animações

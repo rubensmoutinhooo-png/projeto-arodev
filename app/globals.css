@@ -151,8 +151,8 @@
 
 /* 2 — micro-animações dos cards de "Soluções Sob Medida" */
 @keyframes icon-pulse-purple {
-  0%, 100% { box-shadow: 0 0 0 0 rgba(168, 85, 247, 0.45); }
-  50% { box-shadow: 0 0 26px 8px rgba(168, 85, 247, 0.5); }
+  0%, 100% { box-shadow: 0 0 0 0 rgba(245, 185, 66, 0.45); }
+  50% { box-shadow: 0 0 26px 8px rgba(245, 185, 66, 0.5); }
 }
 @keyframes icon-pulse-cyan {
   0%, 100% { box-shadow: 0 0 0 0 rgba(34, 211, 238, 0.45); }
@@ -169,18 +169,75 @@
   animation: data-flow 2.2s linear infinite;
 }
 
-/* acessibilidade: desliga tudo p/ quem prefere menos movimento */
-@media (prefers-reduced-motion: reduce) {
-  .animate-aurora,
-  .animate-aurora-slow,
-  .word-reveal,
-  .fade-up-load,
-  .animate-icon-pulse-purple,
-  .animate-icon-pulse-cyan,
-  .animate-data-flow {
-    animation: none;
-  }
+/* 3 — mockups animados (Soluções Sob Medida) */
+/* celular flutuando */
+@keyframes float-y {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-7px); }
 }
+.animate-float { animation: float-y 5s ease-in-out infinite; }
+
+/* tela do celular rolando sozinha: desce, pausa e volta */
+@keyframes phone-scroll {
+  0%, 14% { transform: translateY(0); }
+  44%, 62% { transform: translateY(-40%); }
+  92%, 100% { transform: translateY(0); }
+}
+.animate-phone-scroll { animation: phone-scroll 9s ease-in-out infinite; }
+
+/* letreiro digitado com cursor (usado por TypeText em project-mockup.tsx) */
+.type-wrap { position: relative; display: inline-block; white-space: nowrap; }
+.type-sizer { visibility: hidden; }
+.type-text {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  overflow: hidden;
+  width: 0;
+  border-right: 1.5px solid var(--color-aro-accent);
+  animation:
+    typing 5s steps(var(--type-steps, 14), end) infinite,
+    type-caret-blink 0.8s step-end infinite;
+}
+@keyframes typing {
+  0% { width: 0; }
+  30%, 94% { width: 100%; }
+  100% { width: 0; }
+}
+@keyframes type-caret-blink {
+  0%, 100% { border-color: var(--color-aro-accent); }
+  50% { border-color: transparent; }
+}
+
+/* elementos "montando" na tela (advocacia) */
+@keyframes pop-in {
+  from { opacity: 0; transform: translateY(8px) scale(0.94); }
+  to { opacity: 1; transform: none; }
+}
+.pop-in { animation: pop-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes bar-grow {
+  from { transform: scaleX(0); opacity: 0; }
+  to { opacity: 1; }
+}
+.bar-grow {
+  transform-origin: left;
+  animation: bar-grow 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* 4 — seção "Por que investir" */
+/* pulso de brilho no destaque 24/7 */
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 18px rgba(0, 217, 163, 0.25)); }
+  50% { filter: drop-shadow(0 0 34px rgba(0, 217, 163, 0.55)); }
+}
+.glow-pulse {
+  animation:
+    pop-in 0.55s cubic-bezier(0.16, 1, 0.3, 1) both,
+    glow-pulse 3.2s ease-in-out 1s infinite;
+}
+
 /* ============================================================ */
 
 @layer base {

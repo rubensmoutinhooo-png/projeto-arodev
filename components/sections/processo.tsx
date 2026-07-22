@@ -35,7 +35,7 @@ export function Processo() {
     <section id="processo" className="relative py-20 md:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 left-1/3 size-96 rounded-full bg-[#a855f7]/10 blur-[110px]"
+        className="pointer-events-none absolute top-0 left-1/3 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
       />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -49,6 +49,20 @@ export function Processo() {
             vem a seguir. Queremos garantir a sua satisfação, são feitas
             revisões e manutenções até a aprovação final do cliente.
           </p>
+        </FadeIn>
+
+        <FadeIn delay={80}>
+          <div className="mt-10 overflow-hidden rounded-3xl border border-white/10 bg-black/40">
+            <video
+              className="aspect-video w-full object-cover"
+              src="/videos/jornada-arodev.mp4"
+              autoPlay
+              loop
+              muted
+              playsInline
+              preload="metadata"
+            />
+          </div>
         </FadeIn>
 
         <div className="mt-14 md:hidden">

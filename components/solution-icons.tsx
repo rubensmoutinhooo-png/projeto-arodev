@@ -1,13 +1,13 @@
 import { Building2, Check } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-// Calendário 3D com pulso roxo — representa agendamento automatizado (Clínicas).
+// Calendário 3D com pulso dourado, representa agendamento automatizado (Clínicas).
 export function CalendarPulseIcon({ className }: { className?: string }) {
   return (
     <div className={cn("relative flex size-28 items-center justify-center", className)}>
       <span
         aria-hidden="true"
-        className="animate-icon-pulse-purple absolute size-16 rounded-2xl bg-[#a855f7]/25"
+        className="animate-icon-pulse-purple absolute size-16 rounded-2xl bg-[#f5b942]/25"
       />
       <svg viewBox="0 0 96 96" className="relative size-24" aria-hidden="true">
         <defs>
@@ -26,10 +26,10 @@ export function CalendarPulseIcon({ className }: { className?: string }) {
           fill="url(#cal-body)"
           stroke="#ffffff1f"
         />
-        <rect x="10" y="14" width="66" height="16" rx="12" fill="#a855f7" />
-        <rect x="10" y="22" width="66" height="8" fill="#a855f7" />
-        <rect x="23" y="6" width="6" height="14" rx="3" fill="#d8b4fe" />
-        <rect x="59" y="6" width="6" height="14" rx="3" fill="#d8b4fe" />
+        <rect x="10" y="14" width="66" height="16" rx="12" fill="#f5b942" />
+        <rect x="10" y="22" width="66" height="8" fill="#f5b942" />
+        <rect x="23" y="6" width="6" height="14" rx="3" fill="#fcd987" />
+        <rect x="59" y="6" width="6" height="14" rx="3" fill="#fcd987" />
         {[0, 1, 2].flatMap((row) =>
           [0, 1, 2, 3].map((col) => {
             const active = row === 1 && col === 2;
@@ -41,14 +41,14 @@ export function CalendarPulseIcon({ className }: { className?: string }) {
                 width="9"
                 height="8"
                 rx="2.5"
-                fill={active ? "#c4b5fd" : "#ffffff"}
+                fill={active ? "#fcd987" : "#ffffff"}
                 fillOpacity={active ? 1 : 0.14}
               />
             );
           })
         )}
       </svg>
-      <span className="animate-icon-pulse-purple absolute -right-1 -bottom-1 flex size-7 items-center justify-center rounded-full bg-[#a855f7] text-white shadow-lg shadow-[#a855f7]/50">
+      <span className="animate-icon-pulse-purple absolute -right-1 -bottom-1 flex size-7 items-center justify-center rounded-full bg-[#f5b942] text-white shadow-lg shadow-[#f5b942]/50">
         <Check className="size-3.5" strokeWidth={3} />
       </span>
     </div>

@@ -1,6 +1,6 @@
 import { Mail, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/logo";
-import { InstagramIcon, LinkedinIcon } from "@/components/social-icons";
+import { InstagramIcon } from "@/components/social-icons";
 
 const ANO = new Date().getFullYear();
 
@@ -14,7 +14,6 @@ const NAV_LINKS = [
 // TODO: trocar pelos perfis reais assim que estiverem no ar
 const SOCIAL_LINKS = [
   { label: "Instagram", href: "https://instagram.com/arodev", icon: InstagramIcon },
-  { label: "LinkedIn", href: "https://linkedin.com/company/arodev", icon: LinkedinIcon },
   { label: "WhatsApp", href: "https://wa.me/5531993608249", icon: MessageCircle },
 ];
 

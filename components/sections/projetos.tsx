@@ -8,18 +8,24 @@ type Accent = "purple" | "cyan" | "default";
 
 const ACCENTS: Record<Accent, { gradient: string; glow: string }> = {
   purple: {
-    gradient: "from-[#8b5cf6] via-transparent to-[#a855f7]",
-    glow: "rgba(168,85,247,0.22)",
+    gradient: "from-[#f5b942] via-transparent to-[#e08a1e]",
+    glow: "rgba(245,185,66,0.22)",
   },
   cyan: {
     gradient: "from-[#22d3ee] via-transparent to-[#0ea5e9]",
     glow: "rgba(34,211,238,0.22)",
   },
   default: {
-    gradient: "from-[#6366f1] via-transparent to-[#a855f7]",
-    glow: "rgba(99,102,241,0.16)",
+    gradient: "from-aro-accent/35 via-transparent to-aro-accent/10",
+    glow: "rgba(0,217,163,0.16)",
   },
 };
+
+const WHATSAPP_NUMBER = "5531993608249";
+
+function buildWhatsAppLink(mensagem: string) {
+  return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensagem)}`;
+}
 
 const SEGMENTOS = [
   {
@@ -28,6 +34,8 @@ const SEGMENTOS = [
       "Como se diferencia: Um negócio sem site depende de mensagens manuais no WhatsApp para agendar, perdendo pacientes fora do horário comercial. Com a nossa solução, sua clínica ganha um canal oficial de alta credibilidade com agendamento automatizado, disponível 24h por dia e integrado à sua agenda.",
     variant: "clinica",
     accent: "purple",
+    mensagemWhatsapp:
+      "Olá! Vi a solução para clínicas e consultórios no site da Aro Dev e quero saber mais sobre o agendamento automatizado.",
   },
   {
     segmento: "Imobiliárias",
@@ -35,13 +43,17 @@ const SEGMENTOS = [
       "Como se diferencia: Empresas comuns dependem exclusivamente de portais de terceiros altamente concorridos. Com o seu próprio catálogo inteligente e formulários sem fricção, sua imobiliária constrói autoridade de marca, filtra clientes qualificados de forma automatizada e centraliza leads direto no seu funil próprio.",
     variant: "imobiliaria",
     accent: "cyan",
+    mensagemWhatsapp:
+      "Olá! Vi a solução para imobiliárias no site da Aro Dev e quero saber mais sobre o catálogo inteligente de imóveis.",
   },
   {
     segmento: "Restaurantes",
     descricao:
-      "Cardápio digital, localização e caminho direto para reserva — sem passos extras entre a fome e a mesa.",
+      "Cardápio digital, localização e caminho direto para reserva, sem passos extras entre a fome e a mesa.",
     variant: "restaurante",
     accent: "default",
+    mensagemWhatsapp:
+      "Olá! Vi a solução para restaurantes no site da Aro Dev e quero saber mais sobre o cardápio digital.",
   },
   {
     segmento: "Escritórios de advocacia",
@@ -49,6 +61,8 @@ const SEGMENTOS = [
       "Site institucional sóbrio, áreas de atuação bem definidas e um canal claro para novos casos.",
     variant: "advocacia",
     accent: "default",
+    mensagemWhatsapp:
+      "Olá! Vi a solução para escritórios de advocacia no site da Aro Dev e quero saber mais.",
   },
 ] as const;
 
@@ -72,7 +86,7 @@ export function Projetos() {
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -right-24 bottom-0 size-96 rounded-full bg-[#8b5cf6]/20 blur-3xl"
+        className="pointer-events-none absolute -right-24 bottom-0 size-96 rounded-full bg-aro-accent/10 blur-3xl"
       />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -124,8 +138,10 @@ export function Projetos() {
                         {item.descricao}
                       </p>
                       <a
-                        href="#contato"
-                        className="group/link mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-aro-accent transition-colors duration-300 hover:text-[#c4b5fd]"
+                        href={buildWhatsAppLink(item.mensagemWhatsapp)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="group/link mt-5 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-aro-accent transition-colors duration-300 hover:text-white"
                       >
                         Quero uma solução assim
                         <ArrowRight

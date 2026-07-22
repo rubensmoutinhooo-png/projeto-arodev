@@ -19,7 +19,7 @@ export function MagneticGlowCard({
   children,
   className,
   glowClassName,
-  glowColor = "rgba(99,102,241,0.16)",
+  glowColor = "rgba(0,217,163,0.16)",
   strength = 10,
 }: MagneticGlowCardProps) {
   const ref = useRef<HTMLDivElement>(null);

@@ -39,7 +39,7 @@ export function Garantia() {
             O que garantimos, sempre
           </h2>
           <p className="mt-3 max-w-2xl text-white/70">
-            Compromissos que valem para todo projeto que colocamos no ar —
+            Compromissos que valem para todo projeto que colocamos no ar,
             do primeiro ao centésimo.
           </p>
         </FadeIn>
@@ -48,12 +48,12 @@ export function Garantia() {
           {COMPROMISSOS.map((item, index) => (
             <FadeIn key={item.titulo} delay={index * 80}>
               <MagneticGlowCard className="h-full rounded-xl p-px">
-                {/* brilho/gradiente roxo — mesma lógica dos demais cards do site */}
-                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#6366f1] via-transparent to-[#a855f7] opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
+                {/* brilho/gradiente sutil, mesma lógica dos demais cards do site */}
+                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
 
                 <div className="relative h-full rounded-[calc(var(--radius-xl)-1px)] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 group-hover/magnetic:border-white/20">
                   <item.icon
-                    className="size-8 text-aro-accent transition-transform duration-300 group-hover/magnetic:scale-110 group-hover/magnetic:text-[#c4b5fd]"
+                    className="size-8 text-aro-accent transition-transform duration-300 group-hover/magnetic:scale-110 group-hover/magnetic:text-white"
                     strokeWidth={1.5}
                   />
                   <h3 className="mt-4 font-heading text-base font-semibold text-white">

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, type ChangeEvent, type FormEvent } from "react";
-import { CheckCircle2, MessageCircle } from "lucide-react";
+import { CheckCircle2, Lock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -79,9 +79,9 @@ export function ContactForm() {
   }
 
   return (
-    <MagneticGlowCard className="rounded-2xl p-px" glowColor="rgba(139,92,246,0.12)">
-      {/* contorno com glow roxo discreto — mesma lógica do FAQ e de "O que garantimos" */}
-      <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#6366f1] via-transparent to-[#a855f7] opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-60" />
+    <MagneticGlowCard className="rounded-2xl p-px" glowColor="rgba(0,217,163,0.12)">
+      {/* contorno com glow sutil, mesma lógica do FAQ e de "O que garantimos" */}
+      <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-60" />
 
       {isSubmitted ? (
         <div className="relative rounded-[calc(var(--radius-2xl)-1px)] border border-white/10 bg-white/[0.04] p-6 text-center backdrop-blur-xl sm:p-8">
@@ -191,8 +191,9 @@ export function ContactForm() {
             Enviar mensagem
           </Button>
 
-          <p className="mt-3 text-center text-xs text-zinc-500">
-            🔒 Seus dados estão protegidos de acordo com as diretrizes de privacidade.
+          <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-xs text-zinc-500">
+            <Lock className="size-3" strokeWidth={2} />
+            Seus dados estão protegidos de acordo com as diretrizes de privacidade.
           </p>
         </form>
       )}

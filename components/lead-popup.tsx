@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, type ChangeEvent, type FormEvent } from "react";
-import { CheckCircle2 } from "lucide-react";
+import { CheckCircle2, Lock } from "lucide-react";
 
 import {
   Dialog,
@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FieldError } from "@/components/ui/field-error";
 
-const DELAY_MS = 30_000;
+const DELAY_MS = 45_000;
 const WHATSAPP_NUMBER = "5531993608249";
 
 type Step = "form" | "success";
@@ -218,8 +218,9 @@ export function LeadPopup() {
                 <FieldError message="Não foi possível enviar seus dados. Verifique sua conexão e tente novamente." />
               )}
 
-              <p className="text-center text-xs text-white/40">
-                🔒 Resposta em até 24 horas. Seus dados estão seguros.
+              <p className="flex items-center justify-center gap-1.5 text-center text-xs text-white/40">
+                <Lock className="size-3" strokeWidth={2} />
+                Resposta em até 24 horas. Seus dados estão seguros.
               </p>
             </form>
           </>

@@ -17,7 +17,7 @@ const inter = Inter({
 
 const siteUrl = "https://arodev.com.br";
 
-const title = "Aro Dev — Sites que transformam visitantes em clientes.";
+const title = "Aro Dev: Sites que transformam visitantes em clientes.";
 const description =
   "Sistemas e sites sob medida, rápidos, otimizados para o Google e desenhados para o posicionamento do seu negócio.";
 

@@ -40,7 +40,7 @@ export function Faq() {
     <section id="faq" className="relative py-20 md:py-28">
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute top-0 right-1/3 size-96 rounded-full bg-[#6366f1]/10 blur-[110px]"
+        className="pointer-events-none absolute top-0 right-1/3 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
       />
 
       <div className="relative mx-auto max-w-3xl px-6">
@@ -54,8 +54,8 @@ export function Faq() {
           {PERGUNTAS.map((item, index) => (
             <FadeIn key={item.pergunta} delay={index * 60}>
               <MagneticGlowCard className="rounded-xl p-px">
-                {/* brilho/gradiente roxo — mesma lógica dos cards de "O que garantimos, sempre" */}
-                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#6366f1] via-transparent to-[#a855f7] opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
+                {/* brilho/gradiente sutil, mesma lógica dos cards de "O que garantimos, sempre" */}
+                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
 
                 <AccordionItem className="relative overflow-hidden rounded-[calc(var(--radius-xl)-1px)] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-colors duration-300 group-hover/magnetic:border-white/20 sm:p-6">
                   <AccordionTrigger className="font-heading text-base text-white">

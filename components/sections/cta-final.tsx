@@ -37,7 +37,7 @@ export function CtaFinal() {
                   <item.icon className="size-4" strokeWidth={1.75} />
                 </span>
                 <p className="text-sm leading-relaxed text-white/70">
-                  <span className="font-semibold text-white">{item.titulo}</span> —{" "}
+                  <span className="font-semibold text-white">{item.titulo}:</span>{" "}
                   {item.descricao}
                 </p>
               </div>

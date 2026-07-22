@@ -51,13 +51,14 @@ const PILARES: Pilar[] = [
 export function PorQueInvestir() {
   return (
     <section className="relative py-20 text-white md:py-28">
+      {/* auroras agora derivam lentamente (mesmas do hero) */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -top-64 left-1/4 size-96 rounded-full bg-[#4f46e5]/25 blur-[100px]"
+        className="animate-aurora pointer-events-none absolute -top-64 left-1/4 size-96 rounded-full bg-aro-accent/15 blur-[100px]"
       />
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute -bottom-40 right-0 size-[28rem] rounded-full bg-[#8b5cf6]/20 blur-[110px]"
+        className="animate-aurora-slow pointer-events-none absolute -bottom-40 right-0 size-[28rem] rounded-full bg-aro-accent/10 blur-[110px]"
       />
 
       <div className="relative mx-auto max-w-6xl px-6">
@@ -70,17 +71,21 @@ export function PorQueInvestir() {
           </h2>
           <p className="mt-4 max-w-xl text-white/60">
             Quatro motivos pelos quais o seu site é o ativo mais importante
-            que o seu negócio pode ter — não apenas um cartão de visitas.
+            que o seu negócio pode ter, não apenas um cartão de visitas.
           </p>
         </FadeIn>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3">
           {PILARES.map((pilar, index) => (
-            <FadeIn key={pilar.titulo} delay={index * 90} className={pilar.span}>
+            <FadeIn key={pilar.titulo} delay={index * 110} className={pilar.span}>
               <MagneticGlowCard className="h-full rounded-3xl p-px">
-                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-[#6366f1] via-transparent to-[#a855f7] opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
+                <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
                 <div className="relative flex h-full flex-col rounded-[calc(1.5rem-1px)] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 sm:p-7">
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-xl bg-white/5 text-[#a5b4fc] transition-transform duration-300 group-hover/magnetic:scale-110 group-hover/magnetic:text-[#c4b5fd]">
+                  {/* ícone pipoca junto com a entrada do card */}
+                  <span
+                    className="pop-in flex size-11 shrink-0 items-center justify-center rounded-xl bg-white/5 text-aro-accent transition-transform duration-300 group-hover/magnetic:scale-110 group-hover/magnetic:text-white"
+                    style={{ animationDelay: `${index * 110 + 250}ms` }}
+                  >
                     <pilar.icon
                       className="size-5 transition-transform duration-500 group-hover/magnetic:rotate-6"
                       strokeWidth={1.75}
@@ -101,9 +106,10 @@ export function PorQueInvestir() {
                     <span
                       aria-hidden="true"
                       className={cn(
-                        "mt-auto bg-gradient-to-r from-[#818cf8] to-[#c4b5fd] bg-clip-text pt-6 font-heading text-5xl font-extrabold text-transparent",
-                        "drop-shadow-[0_0_24px_rgba(129,140,248,0.35)]"
+                        "pop-in glow-pulse mt-auto bg-gradient-to-r from-aro-accent to-white bg-clip-text pt-6 font-heading text-5xl font-extrabold text-transparent",
+                        "drop-shadow-[0_0_24px_rgba(0,217,163,0.35)]"
                       )}
+                      style={{ animationDelay: `${index * 110 + 400}ms, 0ms` }}
                     >
                       {pilar.destaque}
                     </span>

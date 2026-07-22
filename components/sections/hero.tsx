@@ -17,7 +17,7 @@ export function Hero() {
       />
       <div
         aria-hidden="true"
-        className="animate-aurora-slow pointer-events-none absolute right-0 bottom-0 size-[300px] rounded-full bg-[#6366f1]/15 blur-[60px]"
+        className="animate-aurora-slow pointer-events-none absolute right-0 bottom-0 size-[300px] rounded-full bg-aro-accent/10 blur-[60px]"
       />
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-8">
         <div>
@@ -32,7 +32,7 @@ export function Hero() {
             style={{ animationDelay: "750ms" }}
           >
             Sistemas e sites sob medida, rápidos, otimizados para o Google e
-            desenhados para o posicionamento do seu negócio — sem depender de
+            desenhados para o posicionamento do seu negócio, sem depender de
             você para cada detalhe técnico.
           </p>
           <div
