@@ -57,7 +57,7 @@ export function Processo() {
         </FadeIn>
 
         <div className="mt-14 md:hidden">
-          <ol className="space-y-8 border-l border-white/10 pl-6">
+          <ol className="space-y-8 pl-6">
             {ETAPAS.map((etapa) => (
               <li key={etapa.numero} className="relative">
                 <span className="absolute top-0 -left-[2.05rem] flex size-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-aro-accent">
