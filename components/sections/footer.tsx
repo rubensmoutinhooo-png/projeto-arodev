@@ -11,9 +11,8 @@ const NAV_LINKS = [
   { label: "FAQ", href: "#faq" },
 ];
 
-// TODO: trocar pelos perfis reais assim que estiverem no ar
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://instagram.com/arodev", icon: InstagramIcon },
+  { label: "Instagram", href: "https://www.instagram.com/arodev.studio/", icon: InstagramIcon },
   { label: "WhatsApp", href: "https://wa.me/5531993608249", icon: MessageCircle },
 ];
 
