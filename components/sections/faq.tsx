@@ -4,8 +4,9 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { FadeIn } from "@/components/fade-in";
 import { MagneticGlowCard } from "@/components/magnetic-glow-card";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
 
 const PERGUNTAS = [
   {
@@ -37,22 +38,17 @@ const PERGUNTAS = [
 
 export function Faq() {
   return (
-    <section id="faq" className="relative overflow-hidden py-20 md:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute top-0 right-1/3 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
-      />
-
+    <section id="faq" className="relative overflow-hidden py-24 md:py-32">
       <div className="relative mx-auto max-w-3xl px-6">
-        <FadeIn>
-          <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Perguntas frequentes
-          </h2>
-        </FadeIn>
+        <SectionHeading
+          eyebrow="FAQ"
+          titulo="Perguntas frequentes"
+          descricao="O que todo cliente pergunta antes de fechar um projeto, respondido sem rodeios."
+        />
 
         <Accordion className="mt-10 space-y-3">
           {PERGUNTAS.map((item, index) => (
-            <FadeIn key={item.pergunta} delay={index * 60}>
+            <Reveal key={item.pergunta} delay={index * 70}>
               <MagneticGlowCard className="rounded-xl p-px">
                 {/* brilho/gradiente sutil, mesma lógica dos cards de "O que garantimos, sempre" */}
                 <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
@@ -66,7 +62,7 @@ export function Faq() {
                   </AccordionContent>
                 </AccordionItem>
               </MagneticGlowCard>
-            </FadeIn>
+            </Reveal>
           ))}
         </Accordion>
       </div>

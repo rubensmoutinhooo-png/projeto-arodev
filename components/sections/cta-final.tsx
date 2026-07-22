@@ -1,6 +1,6 @@
 import { Clock, ShieldCheck } from "lucide-react";
 import { ContactForm } from "@/components/contact-form";
-import { FadeIn } from "@/components/fade-in";
+import { Reveal } from "@/components/reveal";
 
 const CONFIANCA = [
   {
@@ -17,10 +17,28 @@ const CONFIANCA = [
 
 export function CtaFinal() {
   return (
-    <section id="contato" className="bg-aro-dark py-20 text-white md:py-28">
-      <div className="mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
-        <FadeIn>
-          <h2 className="font-heading text-2xl font-bold sm:text-3xl">
+    <section
+      id="contato"
+      className="relative overflow-hidden bg-gradient-to-b from-background via-aro-dark/70 to-aro-dark py-24 text-white md:py-32"
+    >
+      {/* costura visual com o resto da página: brilho suave, sem linha dura */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-64 bg-[radial-gradient(50%_100%_at_50%_0%,rgba(0,217,163,0.08),transparent_75%)]"
+      />
+
+      <div className="relative mx-auto grid max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-16">
+        <Reveal variant="left">
+          <div className="flex items-center gap-3">
+            <span
+              aria-hidden="true"
+              className="draw-on-reveal h-px w-10 bg-gradient-to-r from-aro-accent to-aro-accent/0"
+            />
+            <span className="text-xs font-semibold tracking-[0.22em] text-aro-accent/90 uppercase">
+              Contato
+            </span>
+          </div>
+          <h2 className="mt-4 bg-gradient-to-r from-white via-white to-white/55 bg-clip-text font-heading text-2xl font-extrabold tracking-tight text-transparent sm:text-3xl">
             Pronto para impulsionar seu negócio e ter um site próprio à
             altura do que você construiu?
           </h2>
@@ -43,11 +61,11 @@ export function CtaFinal() {
               </div>
             ))}
           </div>
-        </FadeIn>
+        </Reveal>
 
-        <FadeIn delay={100}>
+        <Reveal variant="right" delay={120}>
           <ContactForm />
-        </FadeIn>
+        </Reveal>
       </div>
     </section>
   );

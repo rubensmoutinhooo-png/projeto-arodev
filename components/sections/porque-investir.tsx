@@ -1,6 +1,7 @@
 import { Compass, Infinity as InfinityIcon, Landmark, Search, type LucideIcon } from "lucide-react";
-import { FadeIn } from "@/components/fade-in";
 import { MagneticGlowCard } from "@/components/magnetic-glow-card";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
 import { cn } from "@/lib/utils";
 
 interface Pilar {
@@ -50,34 +51,17 @@ const PILARES: Pilar[] = [
 
 export function PorQueInvestir() {
   return (
-    <section className="relative overflow-hidden py-20 text-white md:py-28">
-      {/* auroras agora derivam lentamente (mesmas do hero) */}
-      <div
-        aria-hidden="true"
-        className="animate-aurora pointer-events-none absolute -top-64 left-1/4 size-96 rounded-full bg-aro-accent/15 blur-[100px]"
-      />
-      <div
-        aria-hidden="true"
-        className="animate-aurora-slow pointer-events-none absolute -bottom-40 right-0 size-[28rem] rounded-full bg-aro-accent/10 blur-[110px]"
-      />
-
+    <section className="relative overflow-hidden py-24 text-white md:py-32">
       <div className="relative mx-auto max-w-6xl px-6">
-        <FadeIn>
-          <span className="text-xs font-semibold tracking-[0.2em] text-white/40 uppercase">
-            A tese
-          </span>
-          <h2 className="mt-3 max-w-2xl bg-gradient-to-r from-white via-white to-white/60 bg-clip-text font-heading text-3xl font-extrabold tracking-tight text-transparent sm:text-4xl">
-            Por que investir em um site profissional?
-          </h2>
-          <p className="mt-4 max-w-xl text-white/60">
-            Quatro motivos pelos quais o seu site é o ativo mais importante
-            que o seu negócio pode ter, não apenas um cartão de visitas.
-          </p>
-        </FadeIn>
+        <SectionHeading
+          eyebrow="A tese"
+          titulo="Por que investir em um site profissional?"
+          descricao="Quatro motivos pelos quais o seu site é o ativo mais importante que o seu negócio pode ter, não apenas um cartão de visitas."
+        />
 
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:auto-rows-fr lg:grid-cols-3">
           {PILARES.map((pilar, index) => (
-            <FadeIn key={pilar.titulo} delay={index * 110} className={pilar.span}>
+            <Reveal key={pilar.titulo} delay={index * 110} variant="zoom" className={pilar.span}>
               <MagneticGlowCard className="h-full rounded-3xl p-px">
                 <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
                 <div className="relative flex h-full flex-col rounded-[calc(1.5rem-1px)] border border-white/10 bg-white/[0.03] p-6 backdrop-blur-xl transition-colors duration-300 sm:p-7">
@@ -116,7 +100,7 @@ export function PorQueInvestir() {
                   )}
                 </div>
               </MagneticGlowCard>
-            </FadeIn>
+            </Reveal>
           ))}
         </div>
       </div>

@@ -15,7 +15,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { FieldError } from "@/components/ui/field-error";
 
-const DELAY_MS = 45_000;
+const DELAY_MS = 85_000;
 const WHATSAPP_NUMBER = "5531993608249";
 
 type Step = "form" | "success";

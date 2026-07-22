@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { ScrollProgress } from "@/components/scroll-progress";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -17,6 +18,7 @@ const NAV_LINKS = [
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
   useEffect(() => {
     const onScroll = () => setIsScrolled(window.scrollY > 24);
@@ -25,12 +27,32 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  // Scrollspy: o link da seção visível fica marcado, então o visitante
+  // sempre sabe em que "tela" do fluxo está.
+  useEffect(() => {
+    const sectionIds = NAV_LINKS.map((link) => link.href.slice(1));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) setActiveSection(entry.target.id);
+        }
+      },
+      { rootMargin: "-35% 0px -55% 0px" }
+    );
+    for (const id of sectionIds) {
+      const section = document.getElementById(id);
+      if (section) observer.observe(section);
+    }
+    return () => observer.disconnect();
+  }, []);
+
   // No topo o header ocupa a largura toda, transparente; ao rolar ele
   // "flutua" como uma pílula de vidro fosco com borda e sombra suaves.
   const isElevated = isScrolled || isMenuOpen;
 
   return (
     <header className="fixed inset-x-0 top-0 z-50">
+      <ScrollProgress />
       <div
         className={cn(
           "mx-auto transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)]",
@@ -53,19 +75,28 @@ export function Header() {
           </Link>
 
           <nav className="hidden items-center gap-1 md:flex">
-            {NAV_LINKS.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="group/nav relative rounded-lg px-3 py-2 text-sm font-medium text-white/70 transition-colors duration-200 hover:text-white"
-              >
-                {link.label}
-                <span
-                  aria-hidden="true"
-                  className="absolute inset-x-3 -bottom-px h-px origin-left scale-x-0 bg-gradient-to-r from-aro-accent to-aro-accent/0 transition-transform duration-300 group-hover/nav:scale-x-100"
-                />
-              </a>
-            ))}
+            {NAV_LINKS.map((link) => {
+              const isActive = activeSection === link.href.slice(1);
+              return (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={cn(
+                    "group/nav relative rounded-lg px-3 py-2 text-sm font-medium transition-colors duration-200",
+                    isActive ? "text-white" : "text-white/70 hover:text-white"
+                  )}
+                >
+                  {link.label}
+                  <span
+                    aria-hidden="true"
+                    className={cn(
+                      "absolute inset-x-3 -bottom-px h-px origin-left bg-gradient-to-r from-aro-accent to-aro-accent/0 transition-transform duration-300",
+                      isActive ? "scale-x-100" : "scale-x-0 group-hover/nav:scale-x-100"
+                    )}
+                  />
+                </a>
+              );
+            })}
           </nav>
 
           <div className="hidden md:block">
@@ -98,7 +129,12 @@ export function Header() {
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="rounded-lg px-3 py-2.5 text-sm font-medium text-white/80 transition-colors hover:bg-white/5 hover:text-white"
+                  className={cn(
+                    "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors hover:bg-white/5 hover:text-white",
+                    activeSection === link.href.slice(1)
+                      ? "bg-white/5 text-aro-accent"
+                      : "text-white/80"
+                  )}
                 >
                   {link.label}
                 </a>

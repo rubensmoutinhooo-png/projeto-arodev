@@ -1,4 +1,4 @@
-import { Mail, MessageCircle } from "lucide-react";
+import { ArrowUp, Mail, MessageCircle } from "lucide-react";
 import { Logo } from "@/components/logo";
 import { InstagramIcon } from "@/components/social-icons";
 
@@ -19,7 +19,7 @@ const SOCIAL_LINKS = [
 
 export function Footer() {
   return (
-    <footer className="bg-aro-darker py-16 text-white/60">
+    <footer className="bg-gradient-to-b from-aro-dark to-aro-darker py-16 text-white/60">
       <div className="mx-auto max-w-6xl px-6">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-[1.3fr_1fr_1fr_1fr]">
           <div className="sm:col-span-2 lg:col-span-1">
@@ -69,8 +69,15 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-6 text-xs">
-          © {ANO} Aro Dev. Todos os direitos reservados.
+        <div className="mt-12 flex items-center justify-between border-t border-white/10 pt-6 text-xs">
+          <span>© {ANO} Aro Dev. Todos os direitos reservados.</span>
+          <a
+            href="#hero"
+            className="group flex items-center gap-1.5 transition-colors hover:text-white"
+          >
+            Voltar ao topo
+            <ArrowUp className="size-3.5 transition-transform duration-300 group-hover:-translate-y-0.5" />
+          </a>
         </div>
       </div>
     </footer>

@@ -12,7 +12,8 @@ import {
   TrendingUp,
   Zap,
 } from "lucide-react";
-import { FadeIn } from "@/components/fade-in";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 
@@ -158,19 +159,23 @@ const SERVICO_MANUTENCAO = SERVICOS[3];
 type Servico = (typeof SERVICOS)[number];
 
 function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
-  const isDark = true;
-
   return (
-    <FadeIn delay={index * 60}>
-      <div
-        className={cn(
-          "group relative overflow-hidden rounded-3xl border p-7 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl sm:p-9",
-          isDark
-            ? "border-white/10 bg-aro-dark text-white hover:border-white/20"
-            : "border-black/5 bg-white text-aro-dark hover:border-aro-accent/30"
+    <Reveal delay={index * 90}>
+      <div className="group relative overflow-hidden rounded-3xl p-px transition-transform duration-300 hover:-translate-y-1">
+        {/* borda de luz girando — só no plano em destaque */}
+        {servico.destaque ? (
+          <span
+            aria-hidden="true"
+            className="animate-beam-spin absolute inset-[-150%] bg-[conic-gradient(from_0deg,transparent_0deg,transparent_320deg,rgba(0,217,163,0.8)_355deg,transparent_360deg)]"
+          />
+        ) : (
+          <span
+            aria-hidden="true"
+            className="absolute inset-0 rounded-[inherit] bg-white/10 transition-colors duration-300 group-hover:bg-white/20"
+          />
         )}
-      >
-        {isDark && (
+
+        <div className="relative overflow-hidden rounded-[calc(1.5rem-1px)] bg-aro-dark p-7 text-white shadow-sm transition-shadow duration-300 group-hover:shadow-xl sm:p-9">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.12]"
             style={{
@@ -179,189 +184,115 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
             }}
             aria-hidden="true"
           />
-        )}
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
-        />
-
-        <div className="relative">
-          <div className="flex items-start justify-between">
-            <span
-              className={cn(
-                "font-heading text-4xl font-bold",
-                isDark ? "text-white/15" : "text-aro-dark/15"
-              )}
-            >
-              {servico.numero}
-            </span>
-            <span
-              className={cn(
-                "rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
-                isDark ? "bg-white/10 text-white/70" : "bg-black/5 text-aro-text/60"
-              )}
-            >
-              {servico.prazo}
-              {servico.destaque && " · Popular"}
-            </span>
-          </div>
-
-          <span
-            className={cn(
-              "mt-6 flex size-11 items-center justify-center rounded-xl transition-colors duration-300",
-              isDark
-                ? "bg-white/10 group-hover:bg-white/15"
-                : "bg-aro-accent/10 group-hover:bg-aro-accent/15"
-            )}
-          >
-            <servico.icon
-              className="size-5 text-aro-accent transition-colors duration-300 group-hover:text-white"
-              strokeWidth={1.75}
-            />
-          </span>
-
-          <h3 className="mt-5 font-heading text-xl font-bold sm:text-2xl">{servico.nome}</h3>
-          <p
-            className={cn(
-              "mt-3 text-sm leading-relaxed",
-              isDark ? "text-white/70" : "text-aro-text/70"
-            )}
-          >
-            {servico.descricao}
-          </p>
-
-          {servico.pergunta && (
-            <div className={cn("mt-5 rounded-xl p-4", isDark ? "bg-white/5" : "bg-aro-light")}>
-              <h4
-                className={cn(
-                  "text-xs font-semibold tracking-wide uppercase",
-                  isDark ? "text-white/50" : "text-aro-text/50"
-                )}
-              >
-                {servico.pergunta}
-              </h4>
-              <p
-                className={cn(
-                  "mt-1.5 text-sm leading-relaxed",
-                  isDark ? "text-white/70" : "text-aro-text/70"
-                )}
-              >
-                {servico.explicacao}
-              </p>
-            </div>
-          )}
-
-          {servico.destaques && (
-            <div className="mt-6 space-y-2">
-              {servico.destaques.map((item) => (
-                <div
-                  key={item.titulo}
-                  className={cn(
-                    "flex items-start gap-3 rounded-xl p-3",
-                    isDark ? "bg-white/5" : "bg-aro-light"
-                  )}
-                >
-                  <span
-                    className={cn(
-                      "flex size-8 shrink-0 items-center justify-center rounded-lg",
-                      isDark ? "bg-white/10" : "bg-aro-accent/10"
-                    )}
-                  >
-                    <item.icon className="size-4 text-aro-accent" strokeWidth={1.75} />
-                  </span>
-                  <div>
-                    <p className="text-xs font-semibold">{item.titulo}</p>
-                    <p
-                      className={cn(
-                        "mt-0.5 text-xs leading-relaxed",
-                        isDark ? "text-white/75" : "text-aro-text/60"
-                      )}
-                    >
-                      {item.descricao}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {servico.idealPara && (
-            <p
-              className={cn(
-                "mt-5 text-xs leading-relaxed",
-                isDark ? "text-white/50" : "text-aro-text/50"
-              )}
-            >
-              <span className={isDark ? "font-medium text-white/70" : "font-medium text-aro-text/70"}>
-                Ideal para:
-              </span>{" "}
-              {servico.idealPara}
-            </p>
-          )}
 
           <div
-            className={cn(
-              "mt-7 flex flex-col items-start gap-4 border-t pt-6",
-              isDark ? "border-white/10" : "border-black/5"
-            )}
-          >
-            <div>
-              {servico.precoPrefixo && (
-                <span
-                  className={cn(
-                    "block text-xs whitespace-nowrap",
-                    isDark ? "text-white/50" : "text-aro-text/50"
-                  )}
-                >
-                  {servico.precoPrefixo}
-                </span>
-              )}
-              <div className="font-heading text-2xl font-extrabold whitespace-nowrap sm:text-3xl">
-                {servico.preco}
-              </div>
+            aria-hidden="true"
+            className="pointer-events-none absolute inset-0 bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+          />
+
+          <div className="relative">
+            <div className="flex items-start justify-between">
+              <span className="font-heading text-4xl font-bold text-white/15">
+                {servico.numero}
+              </span>
+              <span
+                className={cn(
+                  "rounded-full px-3 py-1 text-xs font-medium whitespace-nowrap",
+                  servico.destaque
+                    ? "bg-aro-accent/15 text-aro-accent"
+                    : "bg-white/10 text-white/70"
+                )}
+              >
+                {servico.prazo}
+                {servico.destaque && " · Popular"}
+              </span>
             </div>
-            <a
-              href="#contato"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "w-full bg-aro-accent text-aro-dark hover:bg-aro-accent/85"
-              )}
-            >
-              {servico.cta}
-            </a>
+
+            <span className="mt-6 flex size-11 items-center justify-center rounded-xl bg-white/10 transition-colors duration-300 group-hover:bg-white/15">
+              <servico.icon
+                className="size-5 text-aro-accent transition-colors duration-300 group-hover:text-white"
+                strokeWidth={1.75}
+              />
+            </span>
+
+            <h3 className="mt-5 font-heading text-xl font-bold sm:text-2xl">{servico.nome}</h3>
+            <p className="mt-3 text-sm leading-relaxed text-white/70">{servico.descricao}</p>
+
+            {servico.pergunta && (
+              <div className="mt-5 rounded-xl bg-white/5 p-4">
+                <h4 className="text-xs font-semibold tracking-wide text-white/50 uppercase">
+                  {servico.pergunta}
+                </h4>
+                <p className="mt-1.5 text-sm leading-relaxed text-white/70">
+                  {servico.explicacao}
+                </p>
+              </div>
+            )}
+
+            {servico.destaques && (
+              <div className="mt-6 space-y-2">
+                {servico.destaques.map((item) => (
+                  <div key={item.titulo} className="flex items-start gap-3 rounded-xl bg-white/5 p-3">
+                    <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                      <item.icon className="size-4 text-aro-accent" strokeWidth={1.75} />
+                    </span>
+                    <div>
+                      <p className="text-xs font-semibold">{item.titulo}</p>
+                      <p className="mt-0.5 text-xs leading-relaxed text-white/75">
+                        {item.descricao}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+
+            {servico.idealPara && (
+              <p className="mt-5 text-xs leading-relaxed text-white/50">
+                <span className="font-medium text-white/70">Ideal para:</span>{" "}
+                {servico.idealPara}
+              </p>
+            )}
+
+            <div className="mt-7 flex flex-col items-start gap-4 border-t border-white/10 pt-6">
+              <div>
+                {servico.precoPrefixo && (
+                  <span className="block text-xs whitespace-nowrap text-white/50">
+                    {servico.precoPrefixo}
+                  </span>
+                )}
+                <div className="font-heading text-2xl font-extrabold whitespace-nowrap sm:text-3xl">
+                  {servico.preco}
+                </div>
+              </div>
+              <a
+                href="#contato"
+                className={cn(
+                  buttonVariants({ size: "lg" }),
+                  "w-full bg-aro-accent text-aro-dark hover:bg-aro-accent/85"
+                )}
+              >
+                {servico.cta}
+              </a>
+            </div>
           </div>
         </div>
       </div>
-    </FadeIn>
+    </Reveal>
   );
 }
 
 export function Servicos() {
   return (
-    <section id="servicos" className="relative overflow-hidden py-20 md:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-40 right-0 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute bottom-0 -left-24 size-96 rounded-full bg-aro-accent/10 blur-[110px]"
-      />
-
+    <section id="servicos" className="relative overflow-hidden py-24 md:py-32">
       <div className="relative mx-auto max-w-6xl px-6">
-        <FadeIn>
-          <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Serviços
-          </h2>
-          <p className="mt-3 max-w-2xl text-white/70">
-            Encontre o serviço ideal para o momento do seu negócio, de acordo
-            com suas demandas e seus objetivos. Cada projeto com prazos e
-            investimentos 100% transparentes e definidos previamente.
-          </p>
-        </FadeIn>
+        <SectionHeading
+          eyebrow="Serviços"
+          titulo="O plano certo para o momento do seu negócio"
+          descricao="Encontre o serviço ideal de acordo com suas demandas e seus objetivos. Cada projeto com prazos e investimentos 100% transparentes e definidos previamente."
+        />
 
-        <FadeIn delay={90}>
+        <Reveal delay={120}>
           <div className="mt-8 flex flex-col items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between sm:p-7">
             <p className="max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
               Precisa de uma ajuda personalizada? Desenvolvemos uma análise
@@ -378,7 +309,7 @@ export function Servicos() {
               Fale Conosco
             </a>
           </div>
-        </FadeIn>
+        </Reveal>
 
         <div className="mt-12 grid items-start gap-6 md:grid-cols-3">
           {SERVICOS_PRINCIPAIS.map((servico, index) => (
@@ -386,11 +317,11 @@ export function Servicos() {
           ))}
         </div>
 
-        <FadeIn delay={180}>
+        <Reveal delay={180}>
           <span className="mt-12 mb-4 block text-xs font-semibold tracking-wide text-white/40 uppercase">
             Serviço adicional
           </span>
-        </FadeIn>
+        </Reveal>
         <ServicoCard servico={SERVICO_MANUTENCAO} index={SERVICOS.length - 1} />
       </div>
     </section>

@@ -1,3 +1,5 @@
+import { AmbientBackground } from "@/components/ambient-background";
+import { Marquee } from "@/components/marquee";
 import { Header } from "@/components/sections/header";
 import { Hero } from "@/components/sections/hero";
 import { Servicos } from "@/components/sections/servicos";
@@ -13,8 +15,10 @@ export default function Home() {
   return (
     <>
       <Header />
-      <main className="flex-1 bg-background">
+      <main className="relative flex-1 bg-background">
+        <AmbientBackground />
         <Hero />
+        <Marquee />
         <Processo />
         <Servicos />
         <Projetos />

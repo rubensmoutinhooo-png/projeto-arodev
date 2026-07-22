@@ -1,8 +1,9 @@
 import { ArrowRight } from "lucide-react";
 import { ProjectMockup } from "@/components/project-mockup";
 import { CalendarPulseIcon, CatalogFlowIcon } from "@/components/solution-icons";
-import { FadeIn } from "@/components/fade-in";
 import { MagneticGlowCard } from "@/components/magnetic-glow-card";
+import { Reveal } from "@/components/reveal";
+import { SectionHeading } from "@/components/section-heading";
 
 type Accent = "purple" | "cyan" | "default";
 
@@ -79,35 +80,24 @@ function SegmentoIllustration({ item }: { item: (typeof SEGMENTOS)[number] }) {
 
 export function Projetos() {
   return (
-    <section id="projetos" className="relative overflow-hidden py-20 md:py-28">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -top-24 -left-24 size-80 rounded-full bg-aro-accent/15 blur-3xl"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute -right-24 bottom-0 size-96 rounded-full bg-aro-accent/10 blur-3xl"
-      />
-
+    <section id="projetos" className="relative overflow-hidden py-24 md:py-32">
       <div className="relative mx-auto max-w-6xl px-6">
-        <FadeIn>
-          <h2 className="font-heading text-2xl font-bold text-white sm:text-3xl">
-            Soluções Sob Medida
-          </h2>
-          <p className="mt-3 max-w-2xl text-white/70">
-            Projetos estratégicos desenhados para transformar o
-            posicionamento digital do seu negócio. Deixamos para trás a
-            informalidade dos links de redes sociais para construir
-            plataformas de alta conversão que vendem, agendam e captam
-            clientes de forma automática e profissional.
-          </p>
-        </FadeIn>
+        <SectionHeading
+          eyebrow="Soluções"
+          titulo="Soluções Sob Medida"
+          descricao="Projetos estratégicos desenhados para transformar o posicionamento digital do seu negócio. Deixamos para trás a informalidade dos links de redes sociais para construir plataformas de alta conversão que vendem, agendam e captam clientes de forma automática e profissional."
+        />
 
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {SEGMENTOS.map((item, index) => {
             const accent = ACCENTS[item.accent as Accent];
             return (
-              <FadeIn key={item.segmento} delay={index * 80}>
+              <Reveal
+                key={item.segmento}
+                delay={(index % 2) * 100}
+                variant={index % 2 === 0 ? "left" : "right"}
+                className="h-full"
+              >
                 <MagneticGlowCard className="h-full rounded-3xl p-px" glowColor={accent.glow}>
                   {/* brilho/gradiente que combina com a animação de cada card */}
                   <div
@@ -152,7 +142,7 @@ export function Projetos() {
                     </div>
                   </div>
                 </MagneticGlowCard>
-              </FadeIn>
+              </Reveal>
             );
           })}
         </div>
