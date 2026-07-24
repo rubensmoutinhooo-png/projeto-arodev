@@ -175,7 +175,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
           />
         )}
 
-        <div className="relative overflow-hidden rounded-[calc(1.5rem-1px)] bg-aro-dark p-7 text-white shadow-sm transition-shadow duration-300 group-hover:shadow-xl sm:p-9">
+        <div className="relative overflow-hidden rounded-[calc(1.5rem-1px)] bg-aro-dark p-5 text-white shadow-sm transition-shadow duration-300 group-hover:shadow-xl sm:p-9">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.12]"
             style={{
@@ -208,18 +208,22 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
               </span>
             </div>
 
-            <span className="mt-6 flex size-11 items-center justify-center rounded-xl bg-white/10 transition-colors duration-300 group-hover:bg-white/15">
+            <span className="mt-4 flex size-10 items-center justify-center rounded-xl bg-white/10 transition-colors duration-300 group-hover:bg-white/15 sm:mt-6 sm:size-11">
               <servico.icon
                 className="size-5 text-aro-accent transition-colors duration-300 group-hover:text-white"
                 strokeWidth={1.75}
               />
             </span>
 
-            <h3 className="mt-5 font-heading text-xl font-bold sm:text-2xl">{servico.nome}</h3>
-            <p className="mt-3 text-sm leading-relaxed text-white/70">{servico.descricao}</p>
+            <h3 className="mt-4 font-heading text-lg font-bold sm:mt-5 sm:text-2xl">
+              {servico.nome}
+            </h3>
+            <p className="mt-2 text-sm leading-relaxed text-white/70 sm:mt-3">
+              {servico.descricao}
+            </p>
 
             {servico.pergunta && (
-              <div className="mt-5 rounded-xl bg-white/5 p-4">
+              <div className="mt-4 rounded-xl bg-white/5 p-3 sm:mt-5 sm:p-4">
                 <h4 className="text-xs font-semibold tracking-wide text-white/50 uppercase">
                   {servico.pergunta}
                 </h4>
@@ -230,10 +234,13 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
             )}
 
             {servico.destaques && (
-              <div className="mt-6 space-y-2">
+              <div className="mt-4 space-y-2 sm:mt-6">
                 {servico.destaques.map((item) => (
-                  <div key={item.titulo} className="flex items-start gap-3 rounded-xl bg-white/5 p-3">
-                    <span className="flex size-8 shrink-0 items-center justify-center rounded-lg bg-white/10">
+                  <div
+                    key={item.titulo}
+                    className="flex items-start gap-2.5 rounded-xl bg-white/5 p-2.5 sm:gap-3 sm:p-3"
+                  >
+                    <span className="flex size-7 shrink-0 items-center justify-center rounded-lg bg-white/10 sm:size-8">
                       <item.icon className="size-4 text-aro-accent" strokeWidth={1.75} />
                     </span>
                     <div>
@@ -248,20 +255,20 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
             )}
 
             {servico.idealPara && (
-              <p className="mt-5 text-xs leading-relaxed text-white/50">
+              <p className="mt-4 text-xs leading-relaxed text-white/50 sm:mt-5">
                 <span className="font-medium text-white/70">Ideal para:</span>{" "}
                 {servico.idealPara}
               </p>
             )}
 
-            <div className="mt-7 flex flex-col items-start gap-4 border-t border-white/10 pt-6">
+            <div className="mt-5 flex flex-col items-start gap-3 border-t border-white/10 pt-5 sm:mt-7 sm:gap-4 sm:pt-6">
               <div>
                 {servico.precoPrefixo && (
                   <span className="block text-xs whitespace-nowrap text-white/50">
                     {servico.precoPrefixo}
                   </span>
                 )}
-                <div className="font-heading text-2xl font-extrabold whitespace-nowrap sm:text-3xl">
+                <div className="font-heading text-xl font-extrabold whitespace-nowrap sm:text-3xl">
                   {servico.preco}
                 </div>
               </div>
@@ -269,7 +276,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
                 href="#contato"
                 className={cn(
                   buttonVariants({ size: "lg" }),
-                  "w-full bg-aro-accent text-aro-dark hover:bg-aro-accent/85"
+                  "h-11 w-full bg-aro-accent text-aro-dark hover:bg-aro-accent/85 sm:h-12"
                 )}
               >
                 {servico.cta}
@@ -284,7 +291,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
 
 export function Servicos() {
   return (
-    <section id="servicos" className="relative overflow-hidden py-24 md:py-32">
+    <section id="servicos" className="relative overflow-hidden py-16 md:py-32">
       <div className="relative mx-auto max-w-6xl px-6">
         <SectionHeading
           eyebrow="Serviços"
@@ -293,7 +300,7 @@ export function Servicos() {
         />
 
         <Reveal delay={120}>
-          <div className="mt-8 flex flex-col items-start gap-4 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-xl sm:flex-row sm:items-center sm:justify-between sm:p-7">
+          <div className="mt-6 flex flex-col items-start gap-3 rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-xl sm:mt-8 sm:flex-row sm:items-center sm:justify-between sm:gap-4 sm:p-7">
             <p className="max-w-xl text-sm leading-relaxed text-white/70 sm:text-base">
               Precisa de uma ajuda personalizada? Desenvolvemos uma análise
               estratégica do seu cenário para direcionar você à melhor
@@ -311,14 +318,14 @@ export function Servicos() {
           </div>
         </Reveal>
 
-        <div className="mt-12 grid items-start gap-6 md:grid-cols-3">
+        <div className="mt-8 grid items-start gap-4 md:mt-12 md:gap-6 md:grid-cols-3">
           {SERVICOS_PRINCIPAIS.map((servico, index) => (
             <ServicoCard key={servico.nome} servico={servico} index={index} />
           ))}
         </div>
 
         <Reveal delay={180}>
-          <span className="mt-12 mb-4 block text-xs font-semibold tracking-wide text-white/40 uppercase">
+          <span className="mt-8 mb-3 block text-xs font-semibold tracking-wide text-white/40 uppercase sm:mt-12 sm:mb-4">
             Serviço adicional
           </span>
         </Reveal>
