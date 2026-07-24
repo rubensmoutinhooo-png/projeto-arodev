@@ -26,31 +26,31 @@ const SERVICOS = [
     prazo: "5 a 7 dias úteis",
     pergunta: "O que é?",
     descricao:
-      "Uma única página projetada para transformar visitantes em clientes. Cada elemento ali dentro tem um único objetivo: fazer o usuário clicar e entrar em contato com você.",
+      "Uma página única, feita pra transformar quem clica no seu anúncio em contato direto com você.",
     explicacao:
-      "Uma página direta ao ponto que apresenta sua solução, destaca seus diferenciais e leva o cliente direto para o seu WhatsApp ou formulário. Resultado rápido e sem complicação.",
+      "Uma página só, sem menu nem distração. Ela mostra o que você oferece e leva o visitante direto pro seu WhatsApp ou formulário de contato.",
     precoPrefixo: "a partir de",
     preco: "R$ 500",
     cta: "Quero minha Landing Page",
     destaques: [
       {
         icon: Target,
-        titulo: "Foco em Vendas (ROI)",
-        descricao: "Página inteira estruturada para converter cliques de anúncios em clientes reais.",
+        titulo: "Foco em transformar clique em contato",
+        descricao: "Toda a página é pensada pra transformar quem clica no seu anúncio em cliente.",
       },
       {
         icon: Zap,
-        titulo: "Abertura Imediata",
-        descricao: "Site ultra otimizado para carregar na hora e não perder nenhum visitante.",
+        titulo: "Abre rápido",
+        descricao: "Sem o visitante esperar e desistir antes de ver sua oferta.",
       },
       {
         icon: Smartphone,
-        titulo: "Contato Sem Fricção",
-        descricao: "Botões estratégicos que guiam o usuário direto para o seu WhatsApp.",
+        titulo: "Contato em 1 clique",
+        descricao: "Botões que levam direto pro seu WhatsApp, sem precisar procurar.",
       },
     ],
     idealPara:
-      "Profissionais liberais (médicos, advogados, psicólogos, arquitetos), prestadores de serviços, infoprodutores, lançamentos de e-books e qualquer negócio que invista em tráfego pago (anúncios no Instagram/Google).",
+      "Profissionais liberais (médicos, advogados, psicólogos, arquitetos), prestadores de serviços, infoprodutores, lançamentos de e-books e qualquer negócio que anuncia no Instagram ou Google e precisa de um lugar pra receber esse visitante.",
   },
   {
     numero: "02",
@@ -59,22 +59,22 @@ const SERVICOS = [
     prazo: "10 a 15 dias úteis",
     pergunta: "O que é?",
     descricao:
-      "Um site completo, com múltiplos blocos e páginas, feito para contar a história da sua marca, apresentar sua equipe e gerar total confiança desde o primeiro clique.",
+      "Um site com várias páginas, feito pra apresentar sua marca, sua equipe e seus serviços, e passar confiança pra quem pesquisa por você.",
     explicacao:
-      "A casa digital da sua empresa na internet. Ele organiza tudo o que você faz (Início, Sobre, Serviços e Contato) para passar autoridade, profissionalismo e fechar contratos maiores.",
+      "O site organiza tudo sobre sua empresa — Início, Sobre, Serviços e Contato — num só lugar, pra quem pesquisa por você entender rápido o que você faz.",
     precoPrefixo: "a partir de",
     preco: "R$ 1.200",
     cta: "Quero meu Site Institucional",
     destaques: [
       {
         icon: TrendingUp,
-        titulo: "+60% de Credibilidade",
-        descricao: "Posicionamento de marca que transmite solidez e atrai clientes mais qualificados.",
+        titulo: "Mais credibilidade",
+        descricao: "O site mostra que sua empresa é séria e estabelecida.",
       },
       {
         icon: Map,
-        titulo: "Navegação Completa",
-        descricao: "Até 5 páginas estratégicas desenhadas sob medida para o seu funil de atendimento.",
+        titulo: "Navegação completa",
+        descricao: "Até 5 páginas organizadas: Início, Sobre, Serviços e Contato, entre outras.",
       },
       {
         icon: ShieldCheck,
@@ -84,7 +84,7 @@ const SERVICOS = [
       },
     ],
     idealPara:
-      "Clínicas com equipe, escritórios de advocacia ou contabilidade, imobiliárias, construtoras, indústrias, escolas e empresas de serviços consolidadas que precisam de um posicionamento forte e de alta credibilidade.",
+      "Clínicas com equipe, escritórios de advocacia ou contabilidade, imobiliárias, construtoras, indústrias, escolas e empresas de serviços já estabelecidas que precisam de mais páginas pra mostrar equipe e serviços.",
   },
   {
     numero: "03",
@@ -95,20 +95,20 @@ const SERVICOS = [
     descricao:
       "Sua loja aberta e vendendo 24 horas por dia. O cliente navega, escolhe o produto e paga ali mesmo, enquanto você gerencia tudo por um painel simples, sem precisar de técnico.",
     explicacao:
-      "Uma plataforma completa com catálogo, carrinho e pagamentos integrados (Pix e Cartão). Você controla o estoque e os pedidos de forma intuitiva e automática.",
+      "Ela tem catálogo de produtos, carrinho de compras e pagamento por Pix ou cartão, tudo integrado. Você mesmo controla estoque e pedidos pelo painel.",
     precoPrefixo: "a partir de",
     preco: "R$ 3.000",
     cta: "Quero minha Loja Virtual",
     destaques: [
       {
         icon: Zap,
-        titulo: "Faturamento 24/7",
-        descricao: "Vendas automáticas a qualquer hora do dia ou da noite.",
+        titulo: "Vende a qualquer hora",
+        descricao: "A loja continua vendendo mesmo fora do seu horário de atendimento.",
       },
       {
         icon: CreditCard,
-        titulo: "Pix & Crédito",
-        descricao: "Sistema de pagamento instantâneo e seguro já integrado.",
+        titulo: "Pix e cartão",
+        descricao: "O cliente paga por Pix (na hora) ou cartão, sem sair do site.",
       },
       {
         icon: ShieldCheck,
