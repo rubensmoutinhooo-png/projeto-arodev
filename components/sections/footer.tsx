@@ -12,7 +12,7 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "https://www.instagram.com/arodev.studio/", icon: InstagramIcon },
+  { label: "Instagram", href: "https://www.instagram.com/arodev.io/", icon: InstagramIcon },
   { label: "WhatsApp", href: "https://wa.me/5531993608249", icon: MessageCircle },
 ];
 
