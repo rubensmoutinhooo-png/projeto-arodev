@@ -160,8 +160,8 @@ type Servico = (typeof SERVICOS)[number];
 
 function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
   return (
-    <Reveal delay={index * 90}>
-      <div className="group relative overflow-hidden rounded-3xl p-px transition-transform duration-300 hover:-translate-y-1">
+    <Reveal delay={index * 90} className="h-full">
+      <div className="group relative flex h-full flex-col overflow-hidden rounded-3xl p-px transition-transform duration-300 hover:-translate-y-1">
         {/* borda de luz girando — só no plano em destaque */}
         {servico.destaque ? (
           <span
@@ -175,7 +175,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
           />
         )}
 
-        <div className="relative overflow-hidden rounded-[calc(1.5rem-1px)] bg-aro-dark p-5 text-white shadow-sm transition-shadow duration-300 group-hover:shadow-xl sm:p-9">
+        <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1.5rem-1px)] bg-aro-dark p-5 text-white shadow-sm transition-shadow duration-300 group-hover:shadow-xl sm:p-9">
           <div
             className="pointer-events-none absolute inset-0 opacity-[0.12]"
             style={{
@@ -190,7 +190,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
             className="pointer-events-none absolute inset-0 bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover:opacity-100"
           />
 
-          <div className="relative">
+          <div className="relative flex h-full flex-col">
             <div className="flex items-start justify-between">
               <span className="font-heading text-4xl font-bold text-white/15">
                 {servico.numero}
@@ -261,7 +261,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
               </p>
             )}
 
-            <div className="mt-5 flex flex-col items-start gap-3 border-t border-white/10 pt-5 sm:mt-7 sm:gap-4 sm:pt-6">
+            <div className="mt-auto flex flex-col items-start gap-3 border-t border-white/10 pt-5 sm:gap-4 sm:pt-6">
               <div>
                 {servico.precoPrefixo && (
                   <span className="block text-xs whitespace-nowrap text-white/50">
@@ -318,7 +318,7 @@ export function Servicos() {
           </div>
         </Reveal>
 
-        <div className="mt-8 grid items-start gap-4 md:mt-12 md:gap-6 md:grid-cols-3">
+        <div className="mt-8 grid items-stretch gap-4 md:mt-12 md:gap-6 md:grid-cols-3">
           {SERVICOS_PRINCIPAIS.map((servico, index) => (
             <ServicoCard key={servico.nome} servico={servico} index={index} />
           ))}
