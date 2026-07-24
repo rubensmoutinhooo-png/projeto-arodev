@@ -78,8 +78,9 @@ const SERVICOS = [
       },
       {
         icon: ShieldCheck,
-        titulo: "Acompanhamento pós-entrega",
-        descricao: "30 dias de suporte técnico depois que o site vai ao ar.",
+        titulo: "Cuidado que continua",
+        descricao:
+          "Cuidamos dos ajustes nas primeiras 24 horas, e depois o plano de manutenção mensal mantém seu site sempre atualizado.",
       },
     ],
     idealPara:
@@ -111,8 +112,9 @@ const SERVICOS = [
       },
       {
         icon: ShieldCheck,
-        titulo: "Suporte incluso",
-        descricao: "60 dias de suporte depois que a loja entra no ar.",
+        titulo: "Loja sempre cuidada",
+        descricao:
+          "Ajustamos tudo nas primeiras 24 horas, e depois o plano de manutenção mensal mantém sua loja sempre funcionando.",
       },
     ],
     idealPara:
