@@ -50,15 +50,17 @@ export function Processo() {
         <Reveal className="mt-14 md:hidden">
           <ol className="space-y-8 pl-6">
             {ETAPAS.map((etapa) => (
-              <li key={etapa.numero} className="relative">
-                <span className="absolute top-0 -left-[2.05rem] flex size-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-aro-accent">
+              <li key={etapa.numero} className="grid grid-cols-[2rem_1fr] items-center gap-x-3">
+                <span className="flex size-8 items-center justify-center rounded-full border border-white/10 bg-white/[0.06] text-aro-accent">
                   <etapa.icon className="size-4" strokeWidth={1.75} />
                 </span>
                 <span className="text-[11px] font-semibold tracking-wide text-aro-accent/70">
                   Etapa {etapa.numero}
                 </span>
-                <h3 className="font-heading font-semibold text-white">{etapa.titulo}</h3>
-                <p className="mt-1 text-sm leading-relaxed text-white/60">
+                <h3 className="col-start-2 font-heading font-semibold text-white">
+                  {etapa.titulo}
+                </h3>
+                <p className="col-start-2 mt-1 text-sm leading-relaxed text-white/60">
                   {etapa.descricao}
                 </p>
               </li>
