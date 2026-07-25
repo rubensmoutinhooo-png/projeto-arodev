@@ -2,7 +2,10 @@ import { Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { HeroArc } from "@/components/hero-arc";
 import { HeroMockup } from "@/components/hero-mockup";
+import { InteractiveParticles } from "@/components/interactive-particles";
 import { Magnetic } from "@/components/magnetic-button";
+import { MoonBackdrop } from "@/components/moon-backdrop";
+import { SideImageReveal } from "@/components/side-image-reveal";
 import { cn } from "@/lib/utils";
 
 // Compromissos reais (os mesmos da seção de garantias), como prova
@@ -19,6 +22,29 @@ export function Hero() {
       id="hero"
       className="relative flex min-h-[92svh] flex-col justify-center overflow-hidden pt-32 pb-20 text-white md:pt-36 md:pb-24"
     >
+      {/* meia-lua ao fundo, entrando da direita conforme a hero aparece na tela */}
+      <SideImageReveal
+        direction="right"
+        className="pointer-events-none absolute -top-[10%] -right-[16%] hidden opacity-70 sm:block"
+      >
+        <MoonBackdrop />
+      </SideImageReveal>
+
+      {/* halo verde entrando da esquerda, contrapondo a lua */}
+      <SideImageReveal
+        direction="left"
+        delay={120}
+        className="pointer-events-none absolute top-1/3 -left-20 hidden opacity-60 md:block"
+      >
+        <div
+          className="size-64 rounded-full blur-[70px]"
+          style={{ background: "radial-gradient(circle, rgba(0,217,163,0.5), transparent 70%)" }}
+        />
+      </SideImageReveal>
+
+      {/* campo de partículas reativo ao cursor, desacoplado do conteúdo */}
+      <InteractiveParticles />
+
       {/* arco verde amarrado ao scroll, acima do AmbientBackground e atrás do conteúdo */}
       <HeroArc />
       <div className="mx-auto grid w-full max-w-6xl items-center gap-12 px-6 md:grid-cols-2 md:gap-8">
