@@ -12,7 +12,7 @@ const PERGUNTAS = [
   {
     pergunta: "Quanto custa um site?",
     resposta:
-      "O valor varia conforme o escopo. A Landing Page custa a partir de R$ 500, o Site Institucional a partir de R$ 1.200 e o E-commerce a partir de R$ 3.000.",
+      "O valor varia conforme o escopo. A Landing Page custa a partir de R$ 300, o Site Institucional a partir de R$ 1.200 e o E-commerce a partir de R$ 3.000.",
   },
   {
     pergunta: "Quanto tempo leva para o meu site ficar pronto?",

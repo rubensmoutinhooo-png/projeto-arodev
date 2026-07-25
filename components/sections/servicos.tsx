@@ -30,7 +30,7 @@ const SERVICOS = [
     explicacao:
       "Uma página só, sem menu nem distração. Ela mostra o que você oferece e leva o visitante direto pro seu WhatsApp ou formulário de contato.",
     precoPrefixo: "a partir de",
-    preco: "R$ 500",
+    preco: "R$ 300",
     cta: "Quero minha Landing Page",
     destaques: [
       {
