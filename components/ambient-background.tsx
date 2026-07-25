@@ -15,11 +15,11 @@ export function AmbientBackground() {
       />
 
       {/* auroras lentas — apenas em telas médias para cima */}
-      <div className="animate-aurora absolute -top-32 left-[8%] hidden size-[26rem] rounded-full bg-aro-accent/[0.07] blur-[100px] md:block" />
-      <div className="animate-aurora-slow absolute top-1/3 right-[4%] hidden size-[24rem] rounded-full bg-aro-accent/[0.06] blur-[110px] md:block" />
+      <div className="animate-aurora absolute -top-32 left-[8%] hidden size-[30rem] rounded-full bg-aro-accent/[0.1] blur-[100px] md:block" />
+      <div className="animate-aurora-slow absolute top-1/3 right-[4%] hidden size-[28rem] rounded-full bg-aro-accent/[0.09] blur-[110px] md:block" />
 
       {/* brilho estático leve para o mobile */}
-      <div className="absolute inset-x-0 top-0 h-[55vh] bg-[radial-gradient(60%_50%_at_50%_0%,rgba(0,217,163,0.09),transparent_70%)] md:hidden" />
+      <div className="absolute inset-x-0 top-0 h-[55vh] bg-[radial-gradient(60%_50%_at_50%_0%,rgba(0,217,163,0.12),transparent_70%)] md:hidden" />
     </div>
   );
 }

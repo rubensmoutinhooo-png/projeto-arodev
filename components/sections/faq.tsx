@@ -53,7 +53,7 @@ export function Faq() {
                 {/* brilho/gradiente sutil, mesma lógica dos cards de "O que garantimos, sempre" */}
                 <div className="pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br from-aro-accent/35 via-transparent to-aro-accent/10 opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100" />
 
-                <AccordionItem className="relative overflow-hidden rounded-[calc(var(--radius-xl)-1px)] border border-white/10 bg-white/[0.03] p-5 backdrop-blur-xl transition-colors duration-300 group-hover/magnetic:border-white/20 sm:p-6">
+                <AccordionItem className="relative overflow-hidden rounded-[calc(var(--radius-xl)-1px)] border border-aro-accent/15 bg-white/[0.03] p-5 backdrop-blur-xl transition-colors duration-300 group-hover/magnetic:border-aro-accent/35 sm:p-6">
                   <AccordionTrigger className="font-heading text-base text-white">
                     {item.pergunta}
                   </AccordionTrigger>

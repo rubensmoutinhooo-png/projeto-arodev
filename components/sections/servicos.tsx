@@ -173,7 +173,7 @@ function ServicoCard({ servico, index }: { servico: Servico; index: number }) {
         ) : (
           <span
             aria-hidden="true"
-            className="absolute inset-0 rounded-[inherit] bg-white/10 transition-colors duration-300 group-hover:bg-white/20"
+            className="absolute inset-0 rounded-[inherit] bg-aro-accent/15 transition-colors duration-300 group-hover:bg-aro-accent/30"
           />
         )}
 

@@ -40,15 +40,19 @@ export function HeroArc() {
     <div
       ref={ref}
       aria-hidden="true"
-      className="pointer-events-none absolute top-16 left-1/2 h-[520px] w-[1040px] max-w-[160vw] blur-[110px] will-change-transform"
+      className="pointer-events-none absolute top-8 left-1/2 h-[600px] w-[1100px] max-w-[170vw] will-change-transform"
       style={{
         transform:
           "translate(-50%, var(--hero-arc-y, 0px)) scale(var(--hero-arc-scale, 1))",
         opacity: "var(--hero-arc-opacity, 1)",
-        // meia-coroa (arco) de aro-accent desvanecendo para transparente
+        // "glow sphere": meia-coroa (arco) de horizonte — um núcleo claro
+        // (crista de luz) somado a um halo largo de aro-accent, os dois
+        // desvanecendo para transparente. É a assinatura visual do hero.
         background:
-          "radial-gradient(closest-side at 50% 100%, transparent 52%, rgba(0,217,163,0.26) 66%, rgba(0,217,163,0.05) 78%, transparent 86%)",
-        clipPath: "inset(0 0 50% 0)",
+          "radial-gradient(closest-side at 50% 100%, rgba(255,255,255,0.85) 0%, rgba(143,255,228,0.55) 5%, transparent 42%), " +
+          "radial-gradient(closest-side at 50% 100%, transparent 46%, rgba(0,217,163,0.5) 62%, rgba(0,217,163,0.18) 76%, transparent 88%)",
+        filter: "blur(90px)",
+        clipPath: "inset(0 0 44% 0)",
       }}
     />
   );

@@ -7,18 +7,21 @@ import { SectionHeading } from "@/components/section-heading";
 
 type Accent = "purple" | "cyan" | "default";
 
-const ACCENTS: Record<Accent, { gradient: string; glow: string }> = {
+const ACCENTS: Record<Accent, { gradient: string; glow: string; border: string }> = {
   purple: {
     gradient: "from-[#f5b942] via-transparent to-[#e08a1e]",
     glow: "rgba(245,185,66,0.22)",
+    border: "rgba(245,185,66,0.22)",
   },
   cyan: {
     gradient: "from-[#22d3ee] via-transparent to-[#0ea5e9]",
     glow: "rgba(34,211,238,0.22)",
+    border: "rgba(34,211,238,0.22)",
   },
   default: {
     gradient: "from-aro-accent/35 via-transparent to-aro-accent/10",
     glow: "rgba(0,217,163,0.16)",
+    border: "rgba(0,217,163,0.18)",
   },
 };
 
@@ -104,7 +107,10 @@ export function Projetos() {
                     className={`pointer-events-none absolute inset-0 rounded-[inherit] bg-gradient-to-br opacity-0 transition-opacity duration-500 group-hover/magnetic:opacity-100 ${accent.gradient}`}
                   />
 
-                  <div className="relative flex h-full flex-col overflow-hidden rounded-[calc(1.5rem-1px)] border border-white/10 bg-black/40 backdrop-blur-xl transition-colors duration-300 group-hover/magnetic:border-white/20">
+                  <div
+                    className="relative flex h-full flex-col overflow-hidden rounded-[calc(1.5rem-1px)] border bg-black/40 backdrop-blur-xl transition-colors duration-300"
+                    style={{ borderColor: accent.border }}
+                  >
                     {/* textura de pontinhos, mesmo padrão dos cards de "Serviços" */}
                     <div
                       className="pointer-events-none absolute inset-0 opacity-[0.12]"
