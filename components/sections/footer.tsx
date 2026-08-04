@@ -59,11 +59,11 @@ export function Footer() {
           <div className="flex flex-col gap-3 text-sm">
             <span className="font-medium text-white/80">Contato</span>
             <a
-              href="mailto:contato@arodev.com.br"
+              href="mailto:contatoarodev@gmail.com"
               className="flex items-center gap-2 transition-colors hover:text-white"
             >
               <Mail className="size-4" />
-              contato@arodev.com.br
+              contatoarodev@gmail.com
             </a>
           </div>
         </div>
