@@ -63,7 +63,7 @@ const SERVICOS = [
     explicacao:
       "O site organiza tudo sobre sua empresa — Início, Sobre, Serviços e Contato — num só lugar, pra quem pesquisa por você entender rápido o que você faz.",
     precoPrefixo: "a partir de",
-    preco: "R$ 1.200",
+    preco: "R$ 800",
     cta: "Quero meu Site Institucional",
     destaques: [
       {
@@ -97,7 +97,7 @@ const SERVICOS = [
     explicacao:
       "Ela tem catálogo de produtos, carrinho de compras e pagamento por Pix ou cartão, tudo integrado. Você mesmo controla estoque e pedidos pelo painel.",
     precoPrefixo: "a partir de",
-    preco: "R$ 3.000",
+    preco: "R$ 2.000",
     cta: "Quero minha Loja Virtual",
     destaques: [
       {
