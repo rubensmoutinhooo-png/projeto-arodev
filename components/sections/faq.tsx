@@ -12,12 +12,12 @@ const PERGUNTAS = [
   {
     pergunta: "Quanto custa um site?",
     resposta:
-      "O valor varia conforme o escopo. A Landing Page custa a partir de R$ 300, o Site Institucional a partir de R$ 1.200 e o E-commerce a partir de R$ 3.000.",
+      "O valor varia conforme o escopo. A Landing Page custa a partir de R$ 300, o Site Institucional a partir de R$ 800 e o E-commerce a partir de R$ 2.000.",
   },
   {
     pergunta: "Quanto tempo leva para o meu site ficar pronto?",
     resposta:
-      "O prazo médio de entrega é de 7 a 15 dias úteis após o envio de todas as informações, dependendo da complexidade do projeto.",
+      "O prazo médio de entrega é de 1 a 15 dias úteis após o envio de todas as informações, dependendo da complexidade do projeto.",
   },
   {
     pergunta: "O site e o código são meus?",

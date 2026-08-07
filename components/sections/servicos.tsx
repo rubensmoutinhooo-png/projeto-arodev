@@ -23,7 +23,7 @@ const SERVICOS = [
     nome: "Landing Page",
     icon: Zap,
     destaque: true,
-    prazo: "5 a 7 dias úteis",
+    prazo: "1 a 2 dias úteis",
     pergunta: "O que é?",
     descricao:
       "Uma página única, feita pra transformar quem clica no seu anúncio em contato direto com você.",
@@ -56,7 +56,7 @@ const SERVICOS = [
     numero: "02",
     nome: "Site Institucional",
     icon: Globe,
-    prazo: "10 a 15 dias úteis",
+    prazo: "5 a 7 dias úteis",
     pergunta: "O que é?",
     descricao:
       "Um site com várias páginas, feito pra apresentar sua marca, sua equipe e seus serviços, e passar confiança pra quem pesquisa por você.",
@@ -90,7 +90,7 @@ const SERVICOS = [
     numero: "03",
     nome: "E-commerce",
     icon: ShoppingCart,
-    prazo: "20 a 30 dias úteis",
+    prazo: "10 a 15 dias úteis",
     pergunta: "O que é?",
     descricao:
       "Sua loja aberta e vendendo 24 horas por dia. O cliente navega, escolhe o produto e paga ali mesmo, enquanto você gerencia tudo por um painel simples, sem precisar de técnico.",
