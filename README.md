@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Aro Dev — Site Institucional
 
-## Getting Started
+Site oficial da **Aro Dev**, estúdio de desenvolvimento web focado em criar
+sites que convertem visitantes em clientes: landing pages, sites
+institucionais, e-commerce, automação e integrações com IA.
 
-First, run the development server:
+🔗 Produção: [arodev.com.br](https://arodev.com.br)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## Stack
+
+- **[Next.js 16](https://nextjs.org)** (App Router + Turbopack)
+- **React 19**
+- **Tailwind CSS 4**
+- **TypeScript**
+- **[Resend](https://resend.com)** para envio de e-mails (formulário de contato / captura de leads)
+- Deploy contínuo na **Vercel**, a partir do branch `main`
+
+## Estrutura
+
+```
+app/
+  page.tsx              → composição da home (ordem das seções)
+  api/contact/          → endpoint do formulário de contato
+  api/lead/              → endpoint de captura de leads
+components/
+  sections/              → uma seção da landing page por arquivo
+    hero.tsx
+    processo.tsx
+    servicos.tsx
+    diferenciais.tsx
+    porque-investir.tsx
+    projetos.tsx
+    tecnologias.tsx
+    garantia.tsx
+    depoimentos.tsx
+    faq.tsx
+    cta-final.tsx
+    footer.tsx
+  ambient-background.tsx, marquee.tsx, fade-in.tsx, ...  → efeitos e blocos reutilizáveis
+hooks/                   → hooks compartilhados (ex.: use-count-up)
+lib/                      → utilitários (ex.: formatação de telefone)
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Cada seção da home é um componente independente em `components/sections/`,
+importado e ordenado em `app/page.tsx`. Para reordenar, adicionar ou remover
+uma seção da página, é só editar a lista de imports/JSX nesse arquivo — os
+componentes em si não precisam mudar.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Rodando localmente
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```bash
+npm install
+npm run dev
+```
 
-## Learn More
+Abra [http://localhost:3000](http://localhost:3000).
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+npm run build   # build de produção
+npm run lint    # checagem de lint
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Deploy
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+O deploy é automático via Vercel a cada push no branch `main`. Detalhes que
+importam para não travar o deploy:
 
-## Deploy on Vercel
+- O repositório é **privado**, plano Hobby na Vercel. Commits cujo autor
+  (nome/e-mail) não pertence à conta com acesso ao projeto ficam presos como
+  **"Blocked"**, sem aviso visível no site.
+- Sempre confira, depois de um push, se o novo deploy realmente chegou a
+  Production (aba *Deployments* na Vercel) — um `git push` bem-sucedido não
+  garante que o site foi atualizado.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Sobre a Aro Dev
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Planos atuais: Landing Page, Site Institucional, E-commerce e
+Manutenção/Suporte mensal (Growth Digital). Preços e prazos ficam na seção
+de Serviços (`components/sections/servicos.tsx`) e no FAQ
+(`components/sections/faq.tsx`) — são a fonte da verdade, não este README.
